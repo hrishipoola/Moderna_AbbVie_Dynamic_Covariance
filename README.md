@@ -1,6 +1,6 @@
 # Moderna & AbbVie: Dynamic Covariance
 
-Today, let's look at dynamic covariance for biotech diversification and weighting, building on our previous post on [GARCH models for Moderna](https://crawstat.com/2021/01/20/moderna-modeling-volatility-with-garch/). Picking assets with negative covariance, meaning their prices move in opposite directions, is important for diversification. Unlike traditional covariance, dynamic covariance using GARCH gives us a more accurate picture of covariance by taking into account the time-varying aspect (clustering) of volatility. It's also handy in optimizing portfolio weights. 
+Today, let's look at dynamic covariance for biotech diversification and weighting, building on our previous post on [GARCH models for Moderna](https://crawstat.com/2021/01/20/moderna-modeling-volatility-with-garch/). Picking assets with negative covariance, meaning their prices move in opposite directions, is important for diversification. Unlike traditional covariance, dynamic covariance using GARCH gives us a more accurate picture of covariance by taking into account the time-varying aspect (clustering) of volatility. It's also handy in portfolio selection. 
 
 To demonstrate, let's build a simplified version of a portfolio of just two stocks, Moderna (ticker: MRNA) and AbbVie (ticker: ABBV), though, in reality, we'd aim for more diversification. You could apply the same approach to a broader portfolio in any sector you'd like. Let's first take a look at the two companies and my rationale for choosing them. 
 
@@ -16,5 +16,5 @@ We can use dynamic covariance to generate portfolio variance for different asset
 
 𝜎2portfolio =  (w21𝜎21) + (w22𝜎22) + (2w1w2cov1,2)
 
-Let's generate dynamic covariance by specifying and fitting GARCH models for MRNA and ABBV, selecting the optimal GARCH model, deriving conditional volatility and standardized residuals and correlation between standardized residuals, calculating dynamic covariance, and, lastly, seeing how portfolio variance changes with different asset weights to select the best weighting (lowest portfolio variance). 
+Let's generate dynamic covariance by specifying and fitting GARCH models for MRNA and ABBV, selecting the optimal GARCH model, deriving conditional volatility and standardized residuals and correlation between standardized residuals, calculating dynamic covariance, and, lastly, seeing how portfolio variance changes with different asset weights. 
 
