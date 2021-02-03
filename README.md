@@ -10,11 +10,11 @@ AbbVie is an established, diversified pharma with a range of established [produc
 
 Dynamic covariance = correlation of standardized residuals x conditional volatility 1 x conditional volatility 2: 
 
-$cov_{1,2} = \rho_{standardized-residuals}$ x conditional $\sigma_1$ x conditional $\sigma_2$
+cov1,2 = ρstandardized residuals  *  𝜎1 *  𝜎2
 
 We can use dynamic covariance to generate portfolio variance for different asset weights: 
 
-$\sigma_{portfolio}^2 = (w_1^2$ $\sigma_1^2$) + ($w_2^2$ $\sigma_2^2$) + ($2w_1w_2cov_{1,2})$
+𝜎2portfolio =  (w21𝜎21) + (w22𝜎22) + (2w1w2cov1,2)
 
 Let's generate dynamic covariance by specifying and fitting GARCH models for MRNA and ABBV, selecting the optimal GARCH model, deriving conditional volatility and standardized residuals and correlation between standardized residuals, calculating dynamic covariance, and, lastly, seeing how portfolio variance changes with different asset weights to select the best weighting (lowest portfolio variance). 
 
